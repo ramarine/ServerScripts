@@ -5,7 +5,9 @@ iend=$((SECONDS + time_to_measure))
 
 
 if [ "$1" == "--help" ]; then
-	echo " bla bla"
+	echo " Run modes:"
+	echo "./BMC_pwr.sh               # this will generate an output file of format day_month_year_hour_minute_second.csb"
+	echo "./BMC_Pwr.sh file_name.csv # give a file name if you want."
 	exit 1
 fi
 
