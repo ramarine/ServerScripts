@@ -5,6 +5,7 @@ filename=""
 unit="watts"
 time_to_measure=60
 poll_interval=10
+server_name=$(hostname)
 
 usage() {
     echo "Usage: $0 [-f filename] [-u unit] [-d duration] [-i interval] [-h]"
@@ -47,7 +48,7 @@ done
 
 
 if [ -z "$filename" ]; then
-    filename=$(date +"%d_%b_%Y_%H_%M_%S.csv")
+    filename="${server_name}_$(date +"%d_%b_%Y_%H_%M_%S.csv")"
     echo "No file input provided. Generating automatic file called ${filename}"
 fi
 
