@@ -22,7 +22,6 @@ fi
 
 echo "Power(watts) Date" >> "$filename"
 
-
 while [ $SECONDS -lt $iend ]; do  
   VALUE=$(sudo ipmitool sensor get "Pwr Consumption" | grep "Sensor Reading" | awk '{print $4}')
   NOW=$(date +"%Y-%m-%d %H:%M:%S")
