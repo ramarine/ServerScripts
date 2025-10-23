@@ -3,14 +3,14 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import plotly.graph_objects as go
 
-
-
-df = pd.read_csv("test2.csv")
+df = pd.read_csv("np02-srv-005_23_Oct_2025_16_10_58.csv")
 df['Timestamp'] = pd.to_datetime(df['Timestamp'])
 column_names = list(df.columns)
+print(column_names)
+columns_to_be_ignored =['Timestamp','PSU_POUT_02']  #default 'Timestamp'
 
 for col in column_names:
-    if col != 'Timestamp':
+    if col not in columns_to_be_ignored:
         # Extract number with decimals and convert to float
         df[col] = df[col].str.extract(r'(\d+\.\d+|\d+)').astype(float)
         # Plot the column

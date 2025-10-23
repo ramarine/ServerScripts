@@ -8,6 +8,7 @@ poll_interval=10
 server_name=$(hostname)
 
 usage() {
+    echo "Type the following for a one minute Watt measurement: ./BMC_Pwr.sh -u Watts -d 60 -i 10 "
     echo "Usage: $0 [-f filename] [-u unit] [-d duration] [-i interval] [-h]"
     echo "  -f    Output filename (default: auto-generated timestamp)"
     echo "  -u    What unit you want to measure: Watts, Volts, etc. (default: volts)"
